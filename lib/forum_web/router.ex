@@ -18,6 +18,12 @@ defmodule ForumWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/user", PageController, :user
+  end
+
+  scope "/api", ForumWeb do
+    pipe_through :api
+    resources "/v1/posts", PostController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
