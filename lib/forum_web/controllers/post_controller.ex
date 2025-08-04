@@ -18,7 +18,7 @@ defmodule ForumWeb.PostController do
 
       conn
       |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/posts/#{post}")
+      |> put_resp_header("location", ~p"/api/v1/posts/#{post}")
       |> render(:show, post: post)
     end
   end
